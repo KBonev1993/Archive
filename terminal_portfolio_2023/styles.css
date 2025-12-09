@@ -1,0 +1,150 @@
+/* Reset CSS for consistent layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden; /* Disable scrolling */
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: white;
+  background: url('images/map.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Dark tint overlay to ensure visibility of text on all pages */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark tint */
+  z-index: -1; /* Makes sure it stays behind the content */
+}
+
+/* Fix for nav bar */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 0; /* Adjusted padding for consistent height */
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Reserve space for badge and links */
+  margin: 0; /* Reset margin */
+  padding: 0 20px; /* Padding for left and right edges */
+  height: 60px; /* Set consistent height */
+}
+
+nav ul .badge-placeholder {
+  height: 40px; /* Placeholder height matching the badge */
+  width: 120px; /* Placeholder width matching the badge */
+}
+
+nav ul li {
+  margin: 0 20px; /* Consistent spacing between links */
+  height: 100%; /* Match nav bar height */
+  display: flex;
+  align-items: center; /* Vertically align text */
+}
+
+nav ul li.badge iframe {
+  height: 40px; /* Set consistent badge height */
+  width: 120px; /* Adjust badge width */
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: #8a2be2; /* Purple */
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #8a2be2; /* Purple */
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px); /* Subtract nav bar height */
+  text-align: center;
+  color: white;
+  padding: 50px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #8a2be2;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 1.5rem;
+}
+
+section {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+/* Cursor ring effect */
+html, body {
+  cursor: default; /* Default cursor set to pointer (hand) */
+}
+
+.cursor-ring {
+  position: absolute;
+  border: 2px solid #8a2be2;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: width 0.15s, height 0.15s;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* Make sure cursor ring is always on top */
+  opacity: 0.5; /* Slight transparency on the ring */
+}
+
+/* Set default cursor to pointer on interactive elements (links, buttons, etc.) */
+a, button, input, select, textarea {
+  cursor: pointer; /* Ensure pointer cursor for clickable elements */
+}
+
+/* Set default cursor to auto for non-interactive elements (background, text, etc.) */
+body, .hero, section {
+  cursor: default; /* Default arrow cursor for non-clickable areas */
+}
