@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="window">
+        <div id="window-header">
+            <div id="window-controls">
+                <button class="window-control close"></button>
+                <button class="window-control minimize"></button>
+                <button class="window-control maximize"></button>
+            </div>
+            <span>k.bonev@portfolio: </span>
+        </div>
+        <div id="terminal">
+            <div id="terminal-header">
+                <div id="text-container">
+                    <!-- Welcome Message and Command List will be inserted here by JavaScript -->
+                </div>
+                <img src="images/me.png" alt="Me" id="profile-picture">
+                <script src="https://tryhackme.com/badge/97812"></script>
+            </div>
+            <div id="terminal-body">
+                <!-- Command output will be inserted here by JavaScript -->
+            </div>
+            <div id="terminal-footer">
+                <input type="text" id="command-line" placeholder="Type your command..." autofocus />
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

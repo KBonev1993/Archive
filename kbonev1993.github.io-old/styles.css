@@ -1,0 +1,256 @@
+body, html {
+    height: 100vh; /* This ensures the height is exactly the height of the viewport */
+    overflow: hidden; /* This can prevent scrolling, but be cautious as it will also cut off content */
+    margin: 0;
+    font-family: 'Monospace', monospace;
+    background: url('images/kali-wallpaper.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+#window {
+    width: 90%;
+    height: 80%;
+    margin: 2em auto;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 1px solid #FF0000;
+    color: #fff;
+    box-shadow: 0 0 10px #FF0000;
+    display: flex;
+    flex-direction: column;
+}
+
+#window-header {
+    background-color: #000;
+    color: #FF0000;
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+#window-controls {
+    display: flex;
+}
+
+.window-control {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 5px;
+    border: none;
+    outline: none;
+}
+
+.window-control.close {
+    background-color: #EF5350;
+}
+
+.window-control.minimize {
+    background-color: #FFEB3B;
+}
+
+.window-control.maximize {
+    background-color: #66BB6A;
+}
+
+#terminal {
+    padding: 1em;
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#terminal-header {
+    position: relative;
+    padding: 1em;
+}
+
+#text-container {
+    flex-grow: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#profile-picture {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+}
+
+#terminal-body {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-bottom: 2em;
+    text-align: left;
+}
+
+#terminal-footer {
+    padding: 0.5em;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+#command-line {
+    width: calc(100% - 2em);
+    background-color: transparent;
+    color: #FFFFFF;
+    border: none;
+    padding: 0.5em 1em;
+    font-family: 'Monospace', monospace;
+    font-size: 1em;
+    outline: none;
+}
+
+.prompt {
+    color: #FF0000;
+}
+
+.command {
+    color: #FFFFFF;
+}
+
+.output {
+    color: #FFFFFF;
+}
+
+/* New class for the red highlighted text */
+.highlight {
+    color: #FF0000; /* Red color */
+}
+
+/* Styles for social media icons */
+.social-links a {
+    display: inline-block;
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.social-links img {
+    width: 24px; /* This sets the size for the contact icons */
+    height: auto;
+    vertical-align: middle; /* Aligns the image vertically with the text if any */
+}
+
+.skills-icons {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px; /* Adjust the gap between icons as needed */
+}
+
+.skills-icons img {
+    width: 650px; /* This will set the skills icons to be the same width as the contact icons */
+    height: auto; /* Height will scale automatically */
+    cursor: pointer; /* Changes the cursor to indicate the icon is clickable */
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #333;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+  background: #333; /* color of the tracking area */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #888; /* color of the scroll thumb */
+  border-radius: 6px; /* roundness of the scroll thumb */
+  border: 3px solid #333; /* creates padding around scroll thumb */
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+.project-link {
+    color: red;
+    text-decoration: none; /* Optional: removes the underline */
+}
+
+.project-link:hover {
+    color: darkred; /* Optional: changes color on hover for a nice effect */
+}
+.certificates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.certificate-thumbnail {
+    width: 100px; /* Adjust as needed */
+    height: auto;
+    border: 2px solid #fff; /* Optional */
+    cursor: pointer;
+}
+.cv-link {
+    color: red;
+    text-decoration: none; /* Optional: removes the underline */
+}
+
+.cv-link:hover {
+    text-decoration: underline; /* Optional: adds underline on hover */
+}
+
+@media screen and (max-width: 768px) {
+    #window {
+        width: 95%;
+        height: 90%;
+        margin: 1em auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #profile-picture {
+        width: 100px; /* Smaller size for mobile */
+        height: auto; /* This maintains the aspect ratio of the image */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 0.9em; /* Adjust as needed */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .certificates {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .certificate-thumbnail {
+        width: 80px; /* Smaller size for mobile */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #command-line {
+        width: calc(100% - 1em);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .skills-icons img {
+        width: 300px; /* Adjust as needed for mobile */
+    }
+     .social-links img {
+        width: 50px; /* Adjust as needed for mobile */
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #text-container {
+        padding-top: 120px; /* Adjust this value as needed */
+    }
+}
