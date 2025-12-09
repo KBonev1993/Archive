@@ -1,0 +1,14 @@
+# Списък с сайтове. Полета: name (по избор), host, port (по избор)
+sites:
+  - name: example-httpbin
+    host: httpbin.org
+    port: 443
+
+  - name: expired-example
+    host: expired.badssl.com
+    port: 443
+
+# Прагова стойност (в дни)
+thresholds:
+  warning_days: 30
+  error_days: 7

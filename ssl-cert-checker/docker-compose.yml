@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  cert-checker:
+    build: .
+    environment:
+      - SLACK_WEBHOOK_URL
+    volumes:
+      - ./websites.yml:/app/websites.yml:ro
+    command: -c websites.yml
